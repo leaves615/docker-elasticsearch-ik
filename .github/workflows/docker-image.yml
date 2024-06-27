@@ -40,6 +40,9 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
     -
+      name: generate dockerfile
+      run: sh update.sh
+    -
       name: Build and push
       id: docker_build
       uses: docker/build-push-action@v2
