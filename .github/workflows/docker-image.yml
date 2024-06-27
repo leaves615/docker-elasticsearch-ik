@@ -41,7 +41,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
     -
       name: generate dockerfile
-      run: sh update.sh
+      run: sh update.sh ${{matrix.version}}
     -
       name: Build and push
       id: docker_build
